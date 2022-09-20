@@ -10,6 +10,9 @@ import (
 
 func main() {
 	router := gin.Default()
+	// disable trusted proxies
+	router.SetTrustedProxies(nil)
+	// transform string to uppercase in the first letter
 	caser := cases.Title(language.Indonesian)
 
 	router.GET("/ping", func(c *gin.Context) {
